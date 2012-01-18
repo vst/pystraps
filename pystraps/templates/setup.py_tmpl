@@ -24,7 +24,6 @@ import sys, os
 
 PWD = os.path.abspath(os.path.dirname(__file__))
 LONG_DESCRIPTION = open(os.path.join(PWD, "README.rst")).read()
-LICENSE = open(os.path.join(PWD, "LICENSE.txt")).read()
 
 setup(name="${project}",
       version=VAR_VERSION,
@@ -40,7 +39,7 @@ setup(name="${project}",
       author=VAR_AUTHOR,
       author_email=VAR_AUTHOR_EMAIL,
       url=VAR_URL,
-      license=LICENSE,
+      license="License :: OSI Approved :: GNU General Public License (GPL)",
       packages=find_packages(exclude=["ez_setup", "examples", "tests"]),
       include_package_data=True,
       zip_safe=${repr(bool(zip_safe))},
