@@ -31,10 +31,10 @@ To install *pystraps*, issue the following command::
 Bootstrapping your Python package
 =================================
 
-Assuming that your python package is called ``zingo``, issue the
+Assuming that your Python package is called ``zingo``, issue the
 following command and answer the questions. You may simply hit
 ``enter`` to leave them unanswered. Unanswered questions will be
-marked as *TODO* in the package source files which you can alter at
+marked as *TODO* in package source files which you can alter at
 anytime later::
 
   $ paster create -t pystraps zingo
@@ -61,7 +61,7 @@ This command will create the following layout::
   2 directories, 12 files
 
 Note that, in case that you use *git*, the ``_gitignore`` will not
-function unless it is moved to ``.gitignore``.::
+function unless it is moved to ``.gitignore``::
 
   $ cd zingo
   $ mv _gitignore .gitignore
