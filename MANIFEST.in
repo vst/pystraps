@@ -1,6 +1,7 @@
 include *.txt *.rst
 recursive-include pystraps *_tmpl *.txt
 include pystraps/templates/_gitignore
+include pystraps/templates/MANIFEST.in
 include pystraps/templates/development.pip
 include pystraps/templates/docs/Makefile
 include pystraps/templates/docs/make.bat
