@@ -77,12 +77,10 @@ This command will create the following layout::
 
 8 directories, 23 files
 
-Note that, in case that you use *git*, the ``_gitignore``
-(``zingo/_gitignore``) will not function unless it is moved to
-``.gitignore``::
+Note that, in case that you use *git*, the ``zingo/_gitignore`` will
+not function unless the file is renamed to ``.gitignore``::
 
-  $ cd zingo
-  $ mv _gitignore .gitignore
+  $ mv zingo/_gitignore zingo/.gitignore
 
 Installing your package
 =======================
