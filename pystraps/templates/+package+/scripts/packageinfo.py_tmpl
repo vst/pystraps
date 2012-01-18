@@ -1,0 +1,125 @@
+# ${package} - ${description}
+# Copyright (C) ${year} ${author}
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+from ${project} import __version__ as VERSION
+from ${project} import __description__ as DESCRIPTION
+from ${project} import __author__ as AUTHOR
+from ${project} import __author_email__ as AUTHOR_EMAIL
+from ${project} import __url__ as URL
+import ${project}
+import argparse
+
+
+def get_package_module_doc():
+    """
+    Returns the package module documentation.
+    """
+    if ${project}.__doc__:
+        return ${project}.__doc__.strip()
+    return "No package module documentation is available"
+
+
+def display_pkg_info_shorter(args):
+    """
+    Displays the shorter version of the package information.
+    """
+    print "Package name : ${project}"
+    print "Version      : %s" % (VERSION)
+    print "Author       : %s <%s>" % (AUTHOR, AUTHOR_EMAIL)
+    print "Description  : %s" % (DESCRIPTION)
+    print "URL          : %s" % (URL)
+
+
+def display_pkg_info_longer(args):
+    """
+    Displays the shorter version of the package information.
+    """
+    if args.format == "html":
+        print """<div>
+  <dl>
+    <dt>Package name</dt><dd>${project}</dd>
+    <dt>Version</dt><dd>%(VERSION)s</dd>
+    <dt>Author</dt><dd>%(AUTHOR)s &lt;%(AUTHOR_EMAIL)s&gt;</dd>
+    <dt>Description</dt><dd>%(DESCRIPTION)s</dd>
+    <dt>URL</dt><dd>%(URL)s</dd>
+  <dl>
+  <pre>
+%(DOC)s
+  </pre>
+</div>""" % {"VERSION": VERSION,
+             "AUTHOR": AUTHOR,
+             "AUTHOR_EMAIL": AUTHOR_EMAIL,
+             "DESCRIPTION": DESCRIPTION,
+             "URL": URL,
+             "DOC": get_package_module_doc()
+             }
+    else:
+        print "Package name : ${project}"
+        print "Version      : %s" % (VERSION)
+        print "Author       : %s <%s>" % (AUTHOR, AUTHOR_EMAIL)
+        print "Description  : %s" % (DESCRIPTION)
+        print "URL          : %s" % (URL)
+        print
+        print get_package_module_doc()
+
+
+def prepare_argparser():
+    """
+    Prepares an :mod:`argparse` instance.
+    """
+    # Initialize the argument parser:
+    parser = argparse.ArgumentParser(
+        description="Displays information on ${package} package.")
+
+    # Declare sub parsers:
+    subparsers = parser.add_subparsers(help="subcommand help")
+
+    # (1) Parser for `shorter` version of the package information:
+    parser_shorter = subparsers.add_parser(
+        "shorter",
+        help="Displays shorter version of the package information")
+
+    # Set the default action procedure:
+    parser_shorter.set_defaults(func=display_pkg_info_shorter)
+
+    # (2) Parser for `longer` version of the package information:
+    parser_longer = subparsers.add_parser(
+        "longer",
+        help="Displays longer version of the package information")
+
+    # Declare the format parameter:
+    parser_longer.add_argument("-f", "--format",
+                               default="txt",
+                               help=("One of 'txt' or 'html' "
+                                     "as the format of the package "
+                                     "information"))
+
+    # Set the default action procedure:
+    parser_longer.set_defaults(func=display_pkg_info_longer)
+
+    # Done, return:
+    return parser
+
+
+def main():
+    """
+    Displays package information of ${project}
+    """
+    # Parse arguments:
+    args = prepare_argparser().parse_args()
+
+    # Go into the mainloop:
+    args.func(args)

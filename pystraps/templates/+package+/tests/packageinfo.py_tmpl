@@ -1,0 +1,57 @@
+# ${package} - ${description}
+# Copyright (C) ${year} ${author}
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import unittest
+import ${package}
+
+
+class TestPackageInfo(unittest.TestCase):
+    """
+    Tests if the package information has been set or left as TODO.
+    """
+
+    def setUp(self):
+        """
+        Setups the test case.
+        """
+        pass
+
+    def _assertProperInfo(self, prop):
+        """
+        Check if the given property is not none and does not contain
+        *TODO* string.
+        """
+        self.assertIsNotNone(prop)
+        self.assertNotRegexpMatches(prop, "TODO")
+
+    def test_version(self):
+        self._assertProperInfo(${package}.__version__)
+
+    def test_description(self):
+        self._assertProperInfo(${package}.__description__)
+
+    def test_author(self):
+        self._assertProperInfo(${package}.__author__)
+
+    def test_author_email(self):
+        self._assertProperInfo(${package}.__author_email__)
+
+    def test_url(self):
+        self._assertProperInfo(${package}.__url__)
+
+
+if __name__ == '__main__':
+    unittest.main()

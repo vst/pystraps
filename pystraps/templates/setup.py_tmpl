@@ -20,7 +20,8 @@ from ${project} import __description__ as VAR_DESCRIPTION
 from ${project} import __url__ as VAR_URL
 from ${project} import __version__ as VAR_VERSION
 from setuptools import setup, find_packages
-import sys, os
+import os
+import sys
 
 PWD = os.path.abspath(os.path.dirname(__file__))
 LONG_DESCRIPTION = open(os.path.join(PWD, "README.rst")).read()
@@ -44,9 +45,10 @@ setup(name="${project}",
       include_package_data=True,
       zip_safe=${repr(bool(zip_safe))},
       install_requires=[
-          # -*- Extra requirements: -*-
+        "argparse",
       ],
       entry_points="""
-          # -*- Entry points: -*-
+      [console_scripts]
+      ${project}-packageinfo = ${project}.scripts.packageinfo:main
       """,
       )
