@@ -1,0 +1,53 @@
+# ${package} - ${description}
+# Copyright (C) ${year} ${author}
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+from ${project} import __author__ as VAR_AUTHOR
+from ${project} import __author_email__ as VAR_AUTHOR_EMAIL
+from ${project} import __description__ as VAR_DESCRIPTION
+from ${project} import __url__ as VAR_URL
+from ${project} import __version__ as VAR_VERSION
+from setuptools import setup, find_packages
+import sys, os
+
+PWD = os.path.abspath(os.path.dirname(__file__))
+LONG_DESCRIPTION = open(os.path.join(PWD, "README.rst")).read()
+LICENSE = open(os.path.join(PWD, "LICENSE.txt")).read()
+
+setup(name="${project}",
+      version=VAR_VERSION,
+      description=VAR_DESCRIPTION,
+      long_description=LONG_DESCRIPTION,
+      classifiers=[
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
+        "Programming Language :: Python",
+      ],
+      keywords=${repr(keywords)},
+      author=VAR_AUTHOR,
+      author_email=VAR_AUTHOR_EMAIL,
+      url=VAR_URL,
+      license=LICENSE,
+      packages=find_packages(exclude=["ez_setup", "examples", "tests"]),
+      include_package_data=True,
+      zip_safe=${repr(bool(zip_safe))},
+      install_requires=[
+          # -*- Extra requirements: -*-
+      ],
+      entry_points="""
+          # -*- Entry points: -*-
+      """,
+      )

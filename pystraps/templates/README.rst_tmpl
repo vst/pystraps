@@ -1,0 +1,8 @@
+${"".join(["="] * (len(package) + 2))}
+ ${package}
+${"".join(["="] * (len(package) + 2))}
+
+${description}.
+
+-------
+Copyright (C) ${year} ${author}
