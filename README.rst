@@ -97,6 +97,13 @@ install them::
 
   $ pip install -r ./zingo/development.pip
 
+Packaging amd Distributing
+==========================
+
+To distribute your package, you can issue the command:
+
+  $ python setup.py sdist
+
 Running tests
 =============
 
@@ -123,6 +130,6 @@ To edit and generate the documentation, simply go to the docs folder::
 
   $ cd zingo/docs
 
-The documentation is Sphinx ready. To generate the HTML documentation::
+The documentation is Sphinx-ready. To generate the HTML documentation::
 
   $ make html
