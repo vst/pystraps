@@ -1,6 +1,7 @@
 # List of ignores comes from https://github.com/github/gitignore (Linux/Emacs/Python)
 
 .*
+!.gitignore
 *~
 
 # KDE
