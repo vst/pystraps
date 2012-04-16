@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with pystraps. If not, see <http://www.gnu.org/licenses/>.
 
-__version__ = (0, 0, 0, "dev", 0)
+__version__ = (0, 0, 0, "final", 0)
 from paste.script import templates
 from datetime import datetime
 
