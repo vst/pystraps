@@ -38,10 +38,10 @@ def display_pkg_info_shorter(args):
     Displays the shorter version of the package information.
     """
     print "Package name : ${project}"
-    print "Version      : %s" % (VERSION)
+    print "Version      : %s" % (VERSION, )
     print "Author       : %s <%s>" % (AUTHOR, AUTHOR_EMAIL)
-    print "Description  : %s" % (DESCRIPTION)
-    print "URL          : %s" % (URL)
+    print "Description  : %s" % (DESCRIPTION, )
+    print "URL          : %s" % (URL, )
 
 
 def display_pkg_info_longer(args):
@@ -69,10 +69,10 @@ def display_pkg_info_longer(args):
              }
     else:
         print "Package name : ${project}"
-        print "Version      : %s" % (VERSION)
+        print "Version      : %s" % (VERSION, )
         print "Author       : %s <%s>" % (AUTHOR, AUTHOR_EMAIL)
-        print "Description  : %s" % (DESCRIPTION)
-        print "URL          : %s" % (URL)
+        print "Description  : %s" % (DESCRIPTION, )
+        print "URL          : %s" % (URL, )
         print
         print get_package_module_doc()
 

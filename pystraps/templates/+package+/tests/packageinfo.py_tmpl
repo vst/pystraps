@@ -39,7 +39,7 @@ class TestPackageInfo(unittest.TestCase):
         self.assertNotRegexpMatches(prop, "TODO")
 
     def test_version(self):
-        self._assertProperInfo(${package}.__version__)
+        self._assertProperInfo(str(${package}.__version__))
 
     def test_description(self):
         self._assertProperInfo(${package}.__description__)

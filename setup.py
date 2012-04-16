@@ -45,8 +45,8 @@ setup(name="pystraps",
       zip_safe=True,
       install_requires=[
         "versiontools",
-        "paste",
-        "pastescript"
+        "Paste",
+        "PasteScript"
         ],
       entry_points="""
         [paste.paster_create_template]
