@@ -1,9 +1,11 @@
 include *.txt *.rst
-recursive-include pystraps *_tmpl *.txt
-include pystraps/templates/_gitignore
 include pystraps/templates/MANIFEST.in
+include pystraps/templates/_gitignore
 include pystraps/templates/development.pip
 include pystraps/templates/docs/Makefile
 include pystraps/templates/docs/make.bat
 include pystraps/templates/docs/source/_static/README
 include pystraps/templates/docs/source/_templates/README
+include pystraps/templates/versiontools_support.py
+include versiontools_support.py
+recursive-include pystraps *_tmpl *.txt

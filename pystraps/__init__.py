@@ -1,37 +1,37 @@
-# pystraps - Convenient bootstrapping of Python projects
 # Copyright (C) 2012 Vehbi Sinan Tunalioglu
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
+# This file is part of pystraps.
+#
+# pystraps is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# This program is distributed in the hope that it will be useful, but
+# pystraps is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 # General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
+# along with pystraps. If not, see <http://www.gnu.org/licenses/>.
 
+__version__ = (0, 0, 0, "final", 0)
 from paste.script import templates
 from datetime import datetime
 
 TEMPLATE_VARIABLES = [
-    templates.var("version", "Defines the version of the package (like 0.1)",
-                  default="0.1"),
     templates.var("description", "Gives a one-line description of the package",
-                  default="(TODO: Description missing!)"),
+                  default="(TODO: Missing description)"),
     templates.var("keywords", "Defines keywords (tags) for the package",
-                  default="(TODO: Keywords missing!)"),
+                  default="(TODO: Missing keywords)"),
     templates.var("author", "Defines the author name of the package",
-                  default="(TODO: Author missing!)"),
+                  default="(TODO: Missing author name)"),
     templates.var("author_email", "Defines the author email of the package",
-                  default="(TODO: Author email missing!)"),
+                  default="(TODO: Missing author email)"),
     templates.var("url", "Defines the URL of homepage for the package",
-                  default="(TODO: URL missing!)"),
+                  default="(TODO: Missing homepage URL)"),
     templates.var("year", "Defines the year which copyright is valid since",
-                  default="(TODO: Copyright year missing!)"),
+                  default="(TODO: Missing copyright year)"),
     templates.var("zip_safe", "Either of True/False: "
                   "Indicates if the package can be distributed as a .zip file",
                   default=False),
