@@ -15,11 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with ${project}. If not, see <http://www.gnu.org/licenses/>.
 
-from ${project} import __author__ as VAR_AUTHOR
-from ${project} import __author_email__ as VAR_AUTHOR_EMAIL
-from ${project} import __description__ as VAR_DESCRIPTION
-from ${project} import __url__ as VAR_URL
-from ${project} import __version__ as VAR_VERSION
+import versiontools_support
 from setuptools import setup, find_packages
 import os
 import sys
@@ -28,8 +24,8 @@ PWD = os.path.abspath(os.path.dirname(__file__))
 LONG_DESCRIPTION = open(os.path.join(PWD, "README.rst")).read()
 
 setup(name="${project}",
-      version=VAR_VERSION,
-      description=VAR_DESCRIPTION,
+      version=":versiontools:pystraps",
+      description=${description},
       long_description=LONG_DESCRIPTION,
       classifiers=[
         "Development Status :: 2 - Pre-Alpha",
@@ -38,9 +34,9 @@ setup(name="${project}",
         "Programming Language :: Python",
       ],
       keywords=${repr(keywords)},
-      author=VAR_AUTHOR,
-      author_email=VAR_AUTHOR_EMAIL,
-      url=VAR_URL,
+      author=${author},
+      author_email=${author_email},
+      url=${url},
       license="License :: OSI Approved :: GNU General Public License (GPL)",
       packages=find_packages(exclude=["ez_setup", "examples", "tests"]),
       include_package_data=True,

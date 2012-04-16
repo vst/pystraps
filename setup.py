@@ -15,7 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with pystraps. If not, see <http://www.gnu.org/licenses/>.
 
-
 import versiontools_support
 from setuptools import setup, find_packages
 import os
@@ -25,7 +24,7 @@ PWD = os.path.abspath(os.path.dirname(__file__))
 LONG_DESCRIPTION = open(os.path.join(PWD, "README.rst")).read()
 
 setup(name="pystraps",
-      version = ":versiontools:pystraps",
+      version=":versiontools:pystraps",
       description="Convenient bootstrapping of Python projects",
       long_description=LONG_DESCRIPTION,
       classifiers=[
